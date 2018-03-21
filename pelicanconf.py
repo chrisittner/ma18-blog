@@ -26,13 +26,12 @@ LINKS = ()
 SOCIAL = (('envelope-o', 'mailto:ma18@chrisittner.de'),
           ('rss', '/feed.rss'),
           ('github', 'https://github.com/chrisittner'),)
-#         ('stack-overflow', 'http://stackoverflow.com/users/4775652/lodrik'),)
 
 # Uncomment following line if you want document-relative URLs when developing
-# RELATIVE_URLS = True
+RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['render_math', 'better_figures_and_images', ]  # 'md_yaml']
+PLUGINS = ['render_math', 'better_figures_and_images' ]  # 'md_yaml']
 MD_EXTENSIONS = ['codehilite', 'extra', 'smarty', 'toc']
 
 STATIC_PATHS = ['extra', 'images', 'pdfs']
