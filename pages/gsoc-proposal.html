@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/font-awesome.min.css">
+
+
+    <link href="http://meaning.chrisittner.de/feed.rss" type="application/atom+xml" rel="alternate" title="Inferentialist Semantics for Mathematics Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+
+    <meta name="author" content="CH" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="Inferentialist Semantics for Mathematics"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="Inferentialist Semantics for Mathematics"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="http://meaning.chrisittner.de"/>
+
+  <title>Inferentialist Semantics for Mathematics &ndash; GSoC Project Outline</title>
+
+  <style>
+    aside nav > ul > li { text-transform: none !important; }
+    aside > div > a > img { border-radius:0; }
+  </style>
+</head>
+<body>
+  <main>
+<article>
+  <header>
+    <h1 id="gsoc-proposal">GSoC Project Outline</h1>
+  </header>
+  <div>
+    <p>The following project description is taken from my proposal <em>Structure learning from complete data for pgmpy</em> for Google Summer of Code 2016. The timeline below is preliminary and will be updated as needed. The GSoC work period is May-August.</p>
+<h1>The Project</h1>
+<p>I will introduce methods to pgmpy to select Bayesian models based on data sets. First, I'll implement basic support for score-based and constraint-based structure learning. Second, I will add common enhancements to the score-based approach, including local score computation + memoization and tabu lists. Finally, I will implement the MMHC algorithm, which combines the score-based and the constraint-based method.</p>
+<h2>Motivation</h2>
+<p>By now, pgmpy supports most of the fundamental operations on probabilistic graphical models (PGMs). Given a data set and a suitable Bayesian network model, pgmpy can parametrize the model based on the data and perform the usual array of inference and sampling tasks. But the model itself must still be supplied manually.</p>
+<p>Selecting appropriate models is a major challenge in the application of graphical models. Manual construction of e.g. Bayesian networks is error-prone and infeasible for large models. “Does variable X <em>directly</em> influence Y, or might they have a common cause?” Questions like these should be answered based on data, where possible.</p>
+<p>Algorithmic structure learning is an essential feature for any PGM library. In addition, here are two reasons why pgmpy in particular should seek to support structure learning now:</p>
+<ul>
+<li>Structure learning is currently the missing piece for the full PGM data analysis toolchain in pgmpy. Once this feature is implemented, pgmpy can be used for inference and sampling tasks, starting from a data set alone. This will be helpful to convince new users to work with pgmpy. It aids to open pgmpy to a wider audience of data scientists that are not familiar with the internals of causal modeling.</li>
+<li>Structure learning is a recent topic of interest in PGM research. pgmpy has an easily extensible code structure and (aims to have) pythonic implementations. These features make pgmpy a valuable tool to both, researchers and students, who want to experiment with (modified) PGM algorithms. <a href="http://www.amazon.com/Mastering-Probabilistic-Graphical-Models-Python/dp/1784394688">This</a> book is a recent example of the educational nature of the library. pgmpy should not miss its chance to grow as an instructive resource and should seek to cover trending topics such as structure learning as soon as possible.</li>
+</ul>
+<h2>Scope</h2>
+<p>Techniques for structure learning differ for Bayesian networks and Markov networks, and depending on whether or not the data is complete (In the sense that (i) each data sample contains information about exactly the same set of variables and (ii) no relevant variables are hidden). In this project, I will implement structure learning for Bayesian models and complete data.</p>
+<p>I will add two model selection techniques to pgmpy: score-based model selection and constraint-based model selection. In addition to these basic approaches, I will implement a combination of the two, the MMHC algorithm proposed in [<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.4729&amp;rep=rep1&amp;type=pdf">Tsamardinos et al.</a>, 2006].</p>
+<p>Below, I briefly describe the score-based and constraint-based approach, as well as the MMHC algorithm.</p>
+<h4>Score-based model selection</h4>
+<p>This approach construes model selection as an optimization task. It has two building blocks:</p>
+<ul>
+<li>A <em>scoring function</em> $s_D\colon M \to \mathbb R$ that maps models to a numerical score, based on how well they fit to a given data set $D$.</li>
+<li>A <em>search strategy</em> to traverse the search space of possible models $M$ and select a model with optimal score.</li>
+</ul>
+<p>In the case of Bayesian network models, there are two natural candidates for the search space: the set of all Directed Acyclic Graphs (DAGs) or the set of all DAG patterns (I-equivalence classes of DAGs). In order to support search on both, I will add a representation for DAG patterns to pgmpy.</p>
+<h5>Scoring functions</h5>
+<p>Two common scores to measure the fit between model and data are the <em>Bayesian Dirichlet score</em> and the <em>Bayesian Information Criterion</em> (BIC, also called MDL). I will provide implementations for BDe(u) and K2 (two instances of the Bayesian Dirichlet score), and for the BIC score.</p>
+<p>Importantly, these scores <em>decompose</em>, i.e. they can be computed locally for each of the variables, independent of other parts of the network. The score implementation will support memoization, such that local scores are only computed once.</p>
+<h5>Search strategies</h5>
+<p>The search space of DAGs or DAG patterns is super-exponential in the number of variables and the typical scoring functions allow for local maxima. The first property makes exhaustive search intractable for all but very small networks, the second prohibits efficient local optimization algorithms to always find the optimal structure. Thus, all interesting search strategies are heuristic.</p>
+<p>I want to implement the following heuristic search strategies:</p>
+<ul>
+<li>Greedy Equivalence Search for DAGs and DAG patterns</li>
+<li>First ascent hill climbing for DAGs (see [PGM09, page 814f]), with enhancements:</li>
+<li>Use tabu lists to ensure that new structures are explored</li>
+<li>Use score decomposition effectively</li>
+</ul>
+<p>And for the sake of completeness:</p>
+<ul>
+<li>Exhaustive search for DAGs and DAG patterns</li>
+</ul>
+<h4>Constraint-based model selection</h4>
+<p>A common alternative approach to construct models is the following:
+1. Identify independencies in the data set using hypothesis tests
+2. Construct DAG (pattern) according to identified independencies</p>
+<p>There are polynomial-time algorithms for model construction from a set of independencies (see [<a href="http://www.cs.technion.ac.il/~dang/books/Learning%20Bayesian%20Networks&amp;#40;Neapolitan,%20Richard&amp;#41;.pdf">LBN04</a>, page 550] for pseudocode of the PC algorithm, that was introduced by [<a href="https://mitpress.mit.edu/books/causation-prediction-and-search">Spirtes et al.</a>, 1993]). These algorithms are generally more efficient than score-based methods but only work under the assumption that the set of independencies is <em>faithful</em>, i.e. there exists a DAG that exactly corresponds to it. Spurious dependencies in the data set can cause the reported independencies to violate faithfulness. The faithfulness requirement also makes it difficult to construct a Bayesian network from a manually provided list of independencies, because that list must first be extended to satisfy the faithfulness criterion. This in turn is computationally unfeasible except for small models. I will implement constraint-based model selection using independence tests from <code>scipy.stats</code> and the PC model construction algorithm.</p>
+<h4>The MMHC algorithm</h4>
+<p>The MMHC algorithm combines the constraint-based and score-based method effectively. The authors suggest in [<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.4729&amp;rep=rep1&amp;type=pdf">Tsamardinos et al</a>, 2006] that it performs very well against other state-of-the-art structure finding algorithms. At the same time, it is not too difficult to implement. It has two basic steps:</p>
+<ul>
+<li>Learn undirected graph skeleton using independence tests + constraint-based construction procedure</li>
+<li>Orient edges using score-based optimization with Bayesian score + modified hill-climbing search</li>
+</ul>
+<h1>Timeline</h1>
+<p>The GSoC period will be structured in 6 bi-weekly milestones. Each milestone begins with a discussion post on the GSoC blog.</p>
+<h2>Milestone 1: Scoring methods</h2>
+<h4>Implement representation for DAG patterns (= I-Equivalence class of DAGs)</h4>
+<p>Add base class for DAG pattern similar to <code>DirectedGraph</code>, except that some edges are undirected. The implementation might use a networkx <code>MultiDiGraph</code>, with arrows in both directions for undirected edges (then DAG instances are actual subgraphs of the pattern) or an <code>UndirectedGraph</code> + a list of v-structures, depending on which performs better. Add methods to get DAG pattern from <code>DirectedGraph</code> and to construct <code>DirectedGraph</code> from DAG pattern (there is an easy algorithm for that in [<a href="http://www.cs.technion.ac.il/~dang/books/Learning%20Bayesian%20Networks&amp;#40;Neapolitan,%20Richard&amp;#41;.pdf">LBN04</a>, etc.]).</p>
+<h4>Implement Bayesian score and BIC score</h4>
+<p>Since there are multiple scoring methods with common structure, they will derive from a common abstract class. The base class takes a data set as a parameter and exposes a score-method. If the score is decomposable, a local_score method is public as well.</p>
+<p>The Bayesian score for a model $m$, given a data set $D$ is essentially the (marginal) likelihood $P(m|D)$. See [PGM09, sections 18.3.2-18.3.6] or <a href="https://www.cs.helsinki.fi/u/bmmalone/probabilistic-models-spring-2014/ScoringFunctions.pdf">these slides</a> for a derivation of the scores. The implementation will support Bayesian Dirichlet priors, in particular the so-called BDe(u) and K2 score. The K2 score, for example, is given by the following term:</p>
+<p>$$score^{K2}<em X_in="X\in" nodes_m_="nodes(m)">D(m) = \log(P(m)) + \sum</em> local_score^{K2}_D(X, parents_m(X))$$</p>
+<p>where $P(m)$ is some optional structure prior. $local_score^{K2}$ is computed for each node as follows (see [<a href="http://www.ee.bgu.ac.il/~boaz/LernerMalkaAAI2011.pdf">Lerner&amp;Malka</a>, 2011, apply $\log$ to their equation 3]):</p>
+<p>$$local_score^{K2}<em j="1">D(X, P_X) = \sum</em>^{q(P_X)} (\log(\frac{(r-1)!}{(N_j+r-1)!}) + \sum_{k=1}^r \log(N_{jk}!))$$</p>
+<p>Where $r$ is the cardinality of the variable $X$, $q(P_X)$ is the product of the cardinalities of the parents of $X$ (= the possible states of $P_X$) and $N_{jk}$ is the number of times that variable $X$ is in state $k$ while parents are in state $j$ in the data sample. Finally, $N_j:=\sum_{k=1}^r N_{jk}$.</p>
+<p>The BDe(u) and BIC score can similarly be computed from some closed equation. All methods will be implemented to score both DAGs and DAG patterns.</p>
+<h2>Milestone 2: Work on estimators, structure search</h2>
+<h4>Split estimator base classes</h4>
+<p>The BaseEstimator class will be split in one <code>ParameterEstimator</code> and one <code>StructureEstimator</code> base class, so that they can each define a common interface for derived classes. <code>ParameterEstimator</code> is initialized with a data set and a model and should minimally expose <code>get_parameters</code> (and maybe <code>get_parameter</code> if the estimator decomposes). A <code>StructureEstimator</code> is initialized with a data set and minimally exposes <code>get_model</code>.</p>
+<h4>Port <code>BayesianEstimator</code> from <code>book/v0.1</code> branch</h4>
+<p>Add support for Bayesian parameter estimation. Currently pgmpy has ML parameter estimation, which <a href="https://en.wikipedia.org/wiki/Overfitting">overfits</a> the data. Bayesian estimation is partially implemented in the <code>book/v0.1</code> branch and needs to be reviewed, completed and ported to <code>dev</code> branch. While not directly used in model selection, parameter estimation is needed once a structure is found.</p>
+<h4>Implement basic structure search strategies that optimize score</h4>
+<p>Each of the search strategies below will be implemented as a <code>StructureEstimator</code> (parametric on a data set and a score):</p>
+<ul>
+<li>Exhaustive search</li>
+<li>First-ascent hill climbing (HC)<ul>
+<li>Start at a given starting DAG</li>
+<li>Sample operations from [“add edge”,”remove edge”,”reverse arrow”], evaluate score and modify DAG whenever score increases.</li>
+<li>Converges to local maximum</li>
+</ul>
+</li>
+<li>Greedy Equivalence Search (GES) (as described e.g. here)</li>
+</ul>
+<h2>Milestone 3: Enhanced score-based structure learning</h2>
+<p>The following enhancements will be implemented to improve performance of both HC and GES.</p>
+<h4>Tabu lists</h4>
+<p>Tabu search forces the algorithm to explore new structures by preventing the reversal of recent structure changes, e.g. the last 100. [PGM09, page 816] says this already improves performance significantly.</p>
+<h4>Make sure score decomposability is used optimally</h4>
+<p>[PGM09, page 818f] suggest that search algorithms could directly operate with “delta scores”, that indicate whether or not a local change increases the overall score. Explore whether this improves performance over regular caching of the score method, using e.g. a memoization decorator.
+Optional: Implement data perturbation (or random restarts) to escape local maxima
+Data perturbation consists in small random manipulations of the underlying data set to escape local maxima without substantially changing the global structure. I would like to implement some simple mechanisms, as described in [PGM09, page 817].</p>
+<h2>Milestone 4: Constraint-based structure learning</h2>
+<p>Add constraint-based structure learning as a new <code>StructureEstimator</code>:</p>
+<h4>Statistical independence tests on data sets</h4>
+<p>Implement method to perform statistical independence tests to query (conditional) independencies from data set. Method is internal to class and will, if possible, rely on e.g. <code>scipy.stats.chi2_contingency</code> rather than implementing the test by hand.</p>
+<h4>Constraint-based model construction</h4>
+<p>The PA algorithm [<a href="http://www.cs.technion.ac.il/~dang/books/Learning%20Bayesian%20Networks&amp;#40;Neapolitan,%20Richard&amp;#41;.pdf">LBN04</a>, page 550] constructs DAG patterns from faithful sets of independencies. Implement this algorithm with flexible “source” for independencies:
+- A data set -&gt; use independence tests
+- A given set of faithful independencies -&gt; directly work with them
+- Any set of independencies -&gt; for small models we can compute closure under semi-graphoid rules to obtain faithful set of independencies and continue from there.</p>
+<h2>Milestone 5: MMHC algorithm</h2>
+<p>Implement the MMHC algorithm as a <code>StructureEstimator</code>. The algorithm is described step-by-step in  [<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.4729&amp;rep=rep1&amp;type=pdf">Tsamardinos et al</a>, 2006], in three parts. It first uses a constraint-based model construction algorithm called MMPC that is faster than the PC procedure above, but only generates a DAG skeleton, i.e. an <code>UndirectedGraph</code>. Then, a modified hill climbing search with tabu list is used with a BDe score to orient the edges of the graph. This algorithm combines several of the previously implemented features.</p>
+<h2>Milestone 6: Example gallery for structure learning tasks</h2>
+<p>Since pgmpy would benefit from some show cases, the final milestone is dedicated to creating some written content and applications.</p>
+<h4>Example gallery for website</h4>
+<p>Write some guiding introductory examples for structure learning using pgmpy, to illustrate the newly added features. <em>Target audience: new visitors to pgmpy.</em></p>
+<h4>Case studies for structure learning tasks</h4>
+<p>Implement &amp; describe non-trivial show cases for structure learning, for example by replicating structure learning studies/papers in pgmpy. <em>Target audience: people interested in structure learning.</em></p>
+<h4>Performance tests</h4>
+<p>Extend <a href="https://github.com/pgmpy/pgmpy-benchmarks">pgmpy-benchmarks</a> to include some performance statistics for the structure learning methods in pgmpy (and potentially other libraries). Performance tests are valuable information for anyone interested in real applications.</p>
+<h4>Structure learning tutorial for pgmy_notebook</h4>
+<p>Add structure learning tutorial in a new page for the “<a href="https://github.com/pgmpy/pgmpy_notebook">pgmpy_notebook</a>”.</p>
+  </div>
+</article>
+    <footer>  </footer>
+  </main>
+</body>
+</html>
