@@ -3,13 +3,13 @@
 <head>
   <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/style.min.css">
+    <link rel="stylesheet" type="text/css" href="http://ma18.chrisittner.de/theme/stylesheet/style.min.css">
 
-  <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/pygments.min.css">
-  <link rel="stylesheet" type="text/css" href="http://meaning.chrisittner.de/theme/stylesheet/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ma18.chrisittner.de/theme/stylesheet/pygments.min.css">
+  <link rel="stylesheet" type="text/css" href="http://ma18.chrisittner.de/theme/stylesheet/font-awesome.min.css">
 
 
-    <link href="http://meaning.chrisittner.de/feed.rss" type="application/atom+xml" rel="alternate" title="Inferentialist Semantics for Mathematics Atom">
+    <link href="http://ma18.chrisittner.de/feed.rss" type="application/atom+xml" rel="alternate" title="Inferentialist Semantics for Mathematics Atom">
 
 
 
@@ -24,7 +24,7 @@
 <meta property="og:title" content="Inferentialist Semantics for Mathematics"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="http://meaning.chrisittner.de"/>
+<meta property="og:url" content="http://ma18.chrisittner.de"/>
 
   <title>Inferentialist Semantics for Mathematics &ndash; GSoC Project Outline</title>
 
@@ -97,7 +97,7 @@
 <h4>Implement Bayesian score and BIC score</h4>
 <p>Since there are multiple scoring methods with common structure, they will derive from a common abstract class. The base class takes a data set as a parameter and exposes a score-method. If the score is decomposable, a local_score method is public as well.</p>
 <p>The Bayesian score for a model $m$, given a data set $D$ is essentially the (marginal) likelihood $P(m|D)$. See [PGM09, sections 18.3.2-18.3.6] or <a href="https://www.cs.helsinki.fi/u/bmmalone/probabilistic-models-spring-2014/ScoringFunctions.pdf">these slides</a> for a derivation of the scores. The implementation will support Bayesian Dirichlet priors, in particular the so-called BDe(u) and K2 score. The K2 score, for example, is given by the following term:</p>
-<p>$$score^{K2}<em X_in="X\in" nodes_m_="nodes(m)">D(m) = \log(P(m)) + \sum</em> local_score^{K2}_D(X, parents_m(X))$$</p>
+<p>$$score^{K2}<em nodes_m_="nodes(m)" x_in="X\in">D(m) = \log(P(m)) + \sum</em> local_score^{K2}_D(X, parents_m(X))$$</p>
 <p>where $P(m)$ is some optional structure prior. $local_score^{K2}$ is computed for each node as follows (see [<a href="http://www.ee.bgu.ac.il/~boaz/LernerMalkaAAI2011.pdf">Lerner&amp;Malka</a>, 2011, apply $\log$ to their equation 3]):</p>
 <p>$$local_score^{K2}<em j="1">D(X, P_X) = \sum</em>^{q(P_X)} (\log(\frac{(r-1)!}{(N_j+r-1)!}) + \sum_{k=1}^r \log(N_{jk}!))$$</p>
 <p>Where $r$ is the cardinality of the variable $X$, $q(P_X)$ is the product of the cardinalities of the parents of $X$ (= the possible states of $P_X$) and $N_{jk}$ is the number of times that variable $X$ is in state $k$ while parents are in state $j$ in the data sample. Finally, $N_j:=\sum_{k=1}^r N_{jk}$.</p>
