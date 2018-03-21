@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Inferentialist Semantics for Mathematics</title><link href="https://chrisittner.github.io/ma18-blog/" rel="alternate"></link><link href="https://chrisittner.github.io/ma18-blog/feed.rss" rel="self"></link><id>https://chrisittner.github.io/ma18-blog/</id><updated>2016-04-26T00:00:00+02:00</updated><entry><title>GSoC proposal accepted!</title><link href="https://chrisittner.github.io/ma18-blog/2016/04/26/first-post.html" rel="alternate"></link><published>2016-04-26T00:00:00+02:00</published><updated>2016-04-26T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2016-04-26:/ma18-blog/2016/04/26/first-post.html</id><summary type="html">&lt;p&gt;My proposal for &lt;a href="https://summerofcode.withgoogle.com/"&gt;Google Summer of Code 2016&lt;/a&gt; has 
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Inferentialist Semantics for Mathematics</title><link href="https://chrisittner.github.io/ma18-blog/" rel="alternate"></link><link href="https://chrisittner.github.io/ma18-blog/feed.rss" rel="self"></link><id>https://chrisittner.github.io/ma18-blog/</id><updated>2018-03-21T00:00:00+01:00</updated><entry><title>Fist Post ;)</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/first-post.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/first-post.html</id><summary type="html">&lt;p&gt;This week I've started working on my MA thesis in Philosophy, with the working title "Inferentialism and Inductive Definitions".
+On this page I plan to collect relevant references and ideas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week I've started working on my MA thesis in Philosophy, with the working title "Inferentialism and Inductive Definitions".
+On this page I plan to collect relevant references and ideas.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Good Part</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/logical-inferentialism.html</id><summary type="html">&lt;p&gt;Logical Inferentialism = The meaning of logical symbols is fixed by their rules.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Logical Inferentialism = The meaning of logical symbols is fixed by their rules.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Bad Part</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism-epistemic-truth.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/logical-inferentialism-epistemic-truth.html</id><summary type="html">&lt;p&gt;The inferentialist account is bites with several orthodoxies in philosophy:
+    - Truth as more basic than Proof
+    - Truth as bivalent
+    - The analysis of logical consequence in terms of truth (necessary truth-preservation)
+    - Meaning=truth-conditions
+    - yields just intuitionistic logic; inferentialist analysis of truth leave truth as an epistemic notion.
+    - Fails to explain the …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The inferentialist account is bites with several orthodoxies in philosophy:
+    - Truth as more basic than Proof
+    - Truth as bivalent
+    - The analysis of logical consequence in terms of truth (necessary truth-preservation)
+    - Meaning=truth-conditions
+    - yields just intuitionistic logic; inferentialist analysis of truth leave truth as an epistemic notion.
+    - Fails to explain the referential/denotational aspect of meaning.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Ugly Part</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism-harmony.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/logical-inferentialism-harmony.html</id><summary type="html">&lt;p&gt;What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- GE-Rules (local)
+- Conservativeness (global)
+- Stability ?
+- Normal forms ?
+- Monotonicity/strict positivity ?
+- ..
+- PSH&amp;#39;s &amp;#39;reductive&amp;#39; vs. foundational analysis
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;-&amp;gt; Leaves uneasy feeling that doesn't actually work.&lt;/p&gt;
+&lt;p&gt;But, rather: there are many ways to …&lt;/p&gt;</summary><content type="html">&lt;p&gt;What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- GE-Rules (local)
+- Conservativeness (global)
+- Stability ?
+- Normal forms ?
+- Monotonicity/strict positivity ?
+- ..
+- PSH&amp;#39;s &amp;#39;reductive&amp;#39; vs. foundational analysis
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;-&amp;gt; Leaves uneasy feeling that doesn't actually work.&lt;/p&gt;
+&lt;p&gt;But, rather: there are many ways to make it work, but it requires making (philosophically unjustified) choices. No canonical way.&lt;/p&gt;</content></entry><entry><title>Meaning is use</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/meaning-is-use.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/meaning-is-use.html</id><summary type="html">&lt;p&gt;The inferentialist story, broadly following Dummet.&lt;/p&gt;</summary><content type="html">&lt;p&gt;The inferentialist story, broadly following Dummet.&lt;/p&gt;</content></entry><entry><title>Semantics of formal languages</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/semantics-of-formal-languages.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/semantics-of-formal-languages.html</id><summary type="html">&lt;p&gt;What is the meaning of the formula?&lt;/p&gt;</summary><content type="html">&lt;p&gt;What is the meaning of the formula?&lt;/p&gt;</content></entry><entry><title>Fist Post ;)</title><link href="https://chrisittner.github.io/ma18-blog/2018/03/21/first-post.html" rel="alternate"></link><published>2018-03-21T00:00:00+01:00</published><updated>2018-03-21T00:00:00+01:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-03-21:/ma18-blog/2018/03/21/first-post.html</id><summary type="html">&lt;p&gt;This week I've started working on my MA thesis in Philosophy, with the working title "Inferentialism and Inductive Definitions".
+On this page I plan to collect relevant references and ideas.&lt;/p&gt;</summary><content type="html">&lt;p&gt;This week I've started working on my MA thesis in Philosophy, with the working title "Inferentialism and Inductive Definitions".
+On this page I plan to collect relevant references and ideas.&lt;/p&gt;</content></entry><entry><title>GSoC proposal accepted!</title><link href="https://chrisittner.github.io/ma18-blog/2016/04/26/first-post.html" rel="alternate"></link><published>2016-04-26T00:00:00+02:00</published><updated>2016-04-26T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2016-04-26:/ma18-blog/2016/04/26/first-post.html</id><summary type="html">&lt;p&gt;My proposal for &lt;a href="https://summerofcode.withgoogle.com/"&gt;Google Summer of Code 2016&lt;/a&gt; has 
+been accepted :). This means that I will spend part of my summer working on the &lt;a href="http://pgmpy.org"&gt;pgmpy&lt;/a&gt; library. I will implement some techniques for Bayesian Network 
+structure learning. You can have a look an my proposal 
+&lt;a href="http://pgmpy.chrisittner.de/pages/gsoc-proposal.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As a first step, I …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My proposal for &lt;a href="https://summerofcode.withgoogle.com/"&gt;Google Summer of Code 2016&lt;/a&gt; has 
+been accepted :). This means that I will spend part of my summer working on the &lt;a href="http://pgmpy.org"&gt;pgmpy&lt;/a&gt; library. I will implement some techniques for Bayesian Network 
+structure learning. You can have a look an my proposal 
+&lt;a href="http://pgmpy.chrisittner.de/pages/gsoc-proposal.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As a first step, I set up this blog to document my progress. It is built with the &lt;a href="http://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; static-site generator and hosted on &lt;a href="https://pages.github.com/"&gt;GitHub pages&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Updates will follow!&lt;/p&gt;</content></entry><entry><title>GSoC proposal accepted!</title><link href="https://chrisittner.github.io/ma18-blog/2016/04/26/first-post.html" rel="alternate"></link><published>2016-04-26T00:00:00+02:00</published><updated>2016-04-26T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2016-04-26:/ma18-blog/2016/04/26/first-post.html</id><summary type="html">&lt;p&gt;My proposal for &lt;a href="https://summerofcode.withgoogle.com/"&gt;Google Summer of Code 2016&lt;/a&gt; has 
 been accepted :). This means that I will spend part of my summer working on the &lt;a href="http://pgmpy.org"&gt;pgmpy&lt;/a&gt; library. I will implement some techniques for Bayesian Network 
 structure learning. You can have a look an my proposal 
 &lt;a href="http://pgmpy.chrisittner.de/pages/gsoc-proposal.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
