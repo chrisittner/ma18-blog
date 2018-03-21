@@ -1,0 +1,7 @@
+pelican
+Markdown
+beautifulsoup4
+typogrify
+Pillow
+webassets
+ghp-import
