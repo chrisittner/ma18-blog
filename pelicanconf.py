@@ -31,7 +31,7 @@ SOCIAL = (('envelope-o', 'mailto:ma18@chrisittner.de'),
 RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['render_math', 'better_figures_and_images' ]  # 'md_yaml']
+PLUGINS = ['render_math',]  # 'md_yaml']
 MD_EXTENSIONS = ['codehilite', 'extra', 'smarty', 'toc']
 
 STATIC_PATHS = ['extra', 'images', 'pdfs']
