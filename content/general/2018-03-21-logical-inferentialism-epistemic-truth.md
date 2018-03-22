@@ -1,4 +1,4 @@
-title: Logical Inferentialism - The Bad Part
+title: Logical Inferentialism - The Bad
 date: 21.03.2018
 
 The inferentialist account is bites with several orthodoxies in philosophy:
