@@ -43,6 +43,7 @@ EXTRA_PATH_METADATA = {
 THEME = 'themes/Flex'  # from pelican-themes; pelican-blue or Flex (nice-blog, twenty-html5up, free-agent)
 
 # Theme specific config below
+SUMMARY_MAX_LENGTH = 0
 SITETITLE = 'Inferentialist Semantics & Math'
 SITESUBTITLE = 'Collection of thesis-relevant references & snippets'
 #SITEDESCRIPTION = 'A GSoC blog about Bayesian Network Structure Learning with pgmpy'
