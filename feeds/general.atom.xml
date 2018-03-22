@@ -26,10 +26,13 @@ Next, one has to explain &lt;em&gt;how the language is to be understood&lt;/em&g
 &lt;em&gt;What do the words and sentences mean?&lt;/em&gt; 
  How should we interpret them?
 The study of meaning is &lt;em&gt;semantics&lt;/em&gt;. &lt;/p&gt;
-&lt;p&gt;The approach to semantics used in my thesis, &lt;em&gt;(Logical) Inferentialism&lt;/em&gt; (also called &lt;em&gt;proof-theoretic semantics&lt;/em&gt;), is a non-standard account of meaning for formal languages. It makes sense to first recall the received approach, for pointing out essential differences. The standard approach to semantics in logic is to identify the meaning of a sentence with its &lt;em&gt;truth conditions&lt;/em&gt;, thereby reducing sentence-meaning to the notion of truth. To be aware what a sentence means is to know the conditions under which the sentence would be true. Following Tarski, truth is analyzed as &lt;em&gt;truth in a model&lt;/em&gt;.
+&lt;p&gt;The approach to semantics used in my thesis, &lt;em&gt;(Logical) Inferentialism&lt;/em&gt; (also called &lt;em&gt;proof-theoretic semantics&lt;/em&gt;), is a non-standard account of meaning for formal languages. It makes sense to first recall the received approach, for pointing out essential differences. The standard approach to semantics in logic is to identify the meaning of a sentence with its &lt;em&gt;truth conditions&lt;/em&gt;, thereby reducing sentence-meaning to the notion of truth. To know what a sentence means is to be able to recognize the conditions given which the sentence would be true. Following Tarski, truth is analyzed as &lt;em&gt;truth in a model&lt;/em&gt;.
 This received approach is so ubiquitous nowadays, that 'to give a semantics' usually just means to give a basic model theory for the language in question.&lt;/p&gt;
-&lt;p&gt;We briefly outline the usual semantics for formal logic and point out basic features of this account.
-We then compare and contrast this to the operational understanding of the formal languages used for computer programming.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;We briefly outline the usual semantics for formal logic and point out basic features of this account.&lt;/li&gt;
+&lt;li&gt;Along the way we comment on conditions that an reasonable semantics has to satisfy and about the questions that semantics is supposed to answer.&lt;/li&gt;
+&lt;li&gt;We then compare and contrast this to the operational understanding of the formal languages used for computer programming. What are the requirements here? To what extend are the expectations we have about semantics dependent on our agenda, aims or values?&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3&gt;&lt;em&gt;Truth-conditional&lt;/em&gt; semantics for sentences:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
