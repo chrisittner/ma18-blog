@@ -40,6 +40,9 @@ EXTRA_PATH_METADATA = {
     'extra/CNAME': {'path': 'CNAME'},
 }
 
+#ARTICLE_ORDER_BY = 'reversed-date'
+ARTICLE_ORDER_BY = 'date'
+
 THEME = 'themes/Flex'  # from pelican-themes; pelican-blue or Flex (nice-blog, twenty-html5up, free-agent)
 
 # Theme specific config below
