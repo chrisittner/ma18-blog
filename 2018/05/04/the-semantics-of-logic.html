@@ -17,16 +17,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="index, follow" />
 
-    <meta name="author" content="CH" />
-    <meta name="description" content="" />
+<meta name="author" content="CH" />
+<meta name="description" content="" />
+<meta name="keywords" content="">
 <meta property="og:site_name" content="Inferentialist Semantics for Mathematics"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="Inferentialist Semantics for Mathematics"/>
+<meta property="og:title" content="The Semantics of Logic"/>
 <meta property="og:description" content=""/>
 <meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="https://chrisittner.github.io/ma18-blog"/>
-
-  <title>Inferentialist Semantics for Mathematics</title>
+<meta property="og:url" content="https://chrisittner.github.io/ma18-blog/2018/05/04/the-semantics-of-logic.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2018-05-04 00:00:00+02:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="https://chrisittner.github.io/ma18-blog/author/ch.html">
+<meta property="article:section" content="general"/>
+<meta property="og:image" content="">
+  <title>Inferentialist Semantics for Mathematics &ndash; The Semantics of Logic</title>
 
   <style>
     aside nav > ul > li { text-transform: none !important; }
@@ -37,133 +42,11 @@
   <main>
 <article>
   <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/20/post-0.html#post-0">Post 0</a></h2>
-    <p>
-      Posted on Tue 20 March 2018
-    </p>
+    <h1 id="the-semantics-of-logic">The Semantics of Logic</h1>
+    <p>Posted on Fri 04 May 2018</p>
   </header>
   <div>
-      <p>This week I have registered my MA thesis in Philosophy, titled "Inferentialism and Inductive Definitions".
-On this page I collect references, additional material, and ideas.
-I am using a blog instead of a LaTex file for this collection, as a reminder for myself not to resort to 'academic' or dense prose.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/20/semantics-of-formal-languages-unfinished.html#semantics-of-formal-languages-unfinished">Semantics of formal languages (unfinished)</a></h2>
-    <p>
-      Posted on Tue 20 March 2018
-    </p>
-  </header>
-  <div>
-      <p>The first step when introducing a formal language is to define its alphabet &amp; grammar (syntax). 
-Which symbols are part of the language? 
-How are the words and sentences (aka formulas, expressions) of the language formed?
-Next, one has to explain <em>how the language is to be understood</em>. 
-<em>What do the words and sentences mean?</em> 
- How should we interpret them?
-The study of meaning is <em>semantics</em>. </p>
-<p>The approach to semantics used in my thesis, <em>(Logical) Inferentialism</em> (also called <em>proof-theoretic semantics</em>), is a non-standard account of meaning for formal languages. It makes sense to first recall the received approach, for pointing out essential differences. The standard approach to semantics in logic is to identify the meaning of a sentence with its <em>truth conditions</em>, thereby reducing sentence-meaning to the notion of truth. To know what a sentence means is to be able to recognize the conditions given which the sentence would be true. Following Tarski, truth is analyzed as <em>truth in a model</em>.
-This received approach is so ubiquitous nowadays, that 'to give a semantics' usually just means to give a basic model theory for the language in question.</p>
-<ul>
-<li>We briefly outline the usual semantics for formal logic and point out basic features of this account.</li>
-<li>Along the way we comment on conditions that an reasonable semantics has to satisfy and about the questions that semantics is supposed to answer.</li>
-<li>We then compare and contrast this to the operational understanding of the formal languages used for computer programming. What are the requirements here? To what extend are the expectations we have about semantics dependent on our agenda, aims or values?</li>
-<li>What is meaning? &lt;-</li>
-</ul>
-<h3><em>Truth-conditional</em> semantics for sentences:</h3>
-<ul>
-<li>
-<p>Tarski semantics: Give <em>Model</em>, map words to objects ("meanings", "semantic values"). Sentences are mapped to values <em>true</em> or <em>false</em> by a model (satisfaction relation). <strong>Extensional meaning</strong> = denotation = truth value</p>
-</li>
-<li>
-<p>Kripke semantics: Give set of models, each maps words to objects. Sentences are mapped to subsets of set of models (those in which they are satisfied (=true)). <strong>Intensional meaning</strong> = sense_Fr?  = truth conditions</p>
-</li>
-<li>
-<p>Sentence-meaning explained in terms of truth. Understand what a sentence means = be aware of the conditions for its truth.</p>
-</li>
-</ul>
-<h3><em>Operational</em> semantics?</h3>
-<p><em>operational</em> (CS) vs <em>denotational</em> (Logic) semantics.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism.html#logical-inferentialism">Logical Inferentialism - The Good</a></h2>
-    <p>
-      Posted on Wed 21 March 2018
-    </p>
-  </header>
-  <div>
-      <p>Logical Inferentialism = The meaning of logical symbols is fixed by their rules.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism-epistemic-truth.html#logical-inferentialism-epistemic-truth">Logical Inferentialism - The Bad</a></h2>
-    <p>
-      Posted on Wed 21 March 2018
-    </p>
-  </header>
-  <div>
-      <p>The inferentialist account is bites with several orthodoxies in philosophy:
-    - Truth as more basic than Proof
-    - Truth as bivalent
-    - The analysis of logical consequence in terms of truth (necessary truth-preservation)
-    - Meaning=truth-conditions
-    - yields just intuitionistic logic; inferentialist analysis of truth leave truth as an epistemic notion.
-    - Fails to explain the referential/denotational aspect of meaning.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/21/logical-inferentialism-harmony.html#logical-inferentialism-harmony">Logical Inferentialism - The Ugly</a></h2>
-    <p>
-      Posted on Wed 21 March 2018
-    </p>
-  </header>
-  <div>
-      <p>What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?</p>
-<div class="highlight"><pre><span></span>- GE-Rules (local)
-- Conservativeness (global)
-- Stability ?
-- Normal forms ?
-- Monotonicity/strict positivity ?
-- ..
-- PSH&#39;s &#39;reductive&#39; vs. foundational analysis
-</pre></div>
-
-
-<p>-&gt; Leaves uneasy feeling that doesn't actually work.</p>
-<p>But, rather: there are many ways to make it work, but it requires making (philosophically unjustified) choices. No canonical way.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/03/21/meaning-is-use.html#meaning-is-use">Meaning is use</a></h2>
-    <p>
-      Posted on Wed 21 March 2018
-    </p>
-  </header>
-  <div>
-      <p>The inferentialist story, broadly following Dummet. Also logical inferentialism, BHK and relizability, type theory etc as formalizations of bhk.</p>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="https://chrisittner.github.io/ma18-blog/2018/05/04/the-semantics-of-logic.html#the-semantics-of-logic">The Semantics of Logic</a></h2>
-    <p>
-      Posted on Fri 04 May 2018
-    </p>
-  </header>
-  <div>
-      <p>Model-theoretic semantics (as presented by Tarski) provides a formal account of the meaning of the logical vocabulary ($$\land, \lor, \forall, \ldots$$). In summary:</p>
+    <p>Model-theoretic semantics (as presented by Tarski) provides a formal account of the meaning of the logical vocabulary ($$\land, \lor, \forall, \ldots$$). In summary:</p>
 <p>Given the usual language of first order logic $$\mathcal L$$, we first define the notion of a <em>model</em> $$\mathfrak M_{\mathcal L}$$. A model fixes the domain of individuals, and assigns an extension to the non-logical vocabulary of the language (=specifies what the variable, predicate and function symbols <em>refer</em> to). In other words, the model fixes the extension of the non-logical part of the language.</p>
 <p>One can then specify the meaning of the logical vocabulary by stating their recursive <em>satisfaction conditions</em> (or <em>truth-in-a-model conditions</em> or simply <em>truth conditions</em>), for example</p>
 <p>If $$\mathfrak M_{\mathcal L}$$ is a model, then </p>
@@ -183,17 +66,28 @@ These theories involve certain non-logical symbols, such as $$+,S,\in$$, and com
 <p>In particular, ZFC and its model theory is not a formal account of the semantics of mathematics. </p>
 <p>When using the notion of a "standard model of set theory", that supposedly fixes the meaning of membership, this is not very satisfactory: Mathematical meaning, with mathematical theorems being necessary, shouldn't vary with models. Next it only fixes extension, and lastly an undefined notion of standard model is murky and subjective. How do i know my standard model is the same as that of others?</p>
   </div>
+  <div class="tag-cloud">
+    <p>
+    </p>
+  </div>
 </article>
-
     <footer>  </footer>
   </main>
 <script type="application/ld+json">
 {
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " Inferentialist Semantics for Mathematics ",
-  "url" : "https://chrisittner.github.io/ma18-blog",
-  "image": "",
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "name": "The Semantics of Logic",
+  "headline": "The Semantics of Logic",
+  "datePublished": "2018-05-04 00:00:00+02:00",
+  "dateModified": "",
+  "author": {
+    "@type": "Person",
+    "name": "CH",
+    "url": "https://chrisittner.github.io/ma18-blog/author/ch.html"
+  },
+  "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
+  "url": "https://chrisittner.github.io/ma18-blog/2018/05/04/the-semantics-of-logic.html",
   "description": ""
 }
 </script></body>
