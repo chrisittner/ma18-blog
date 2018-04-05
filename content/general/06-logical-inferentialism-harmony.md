@@ -1,5 +1,5 @@
 title: Logical Inferentialism - The Ugly
-date: 21.03.2018
+date: 21.04.2018
 
 What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?
 

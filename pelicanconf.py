@@ -31,8 +31,8 @@ SOCIAL = (('envelope-o', 'mailto:ma18@chrisittner.de'),
 RELATIVE_URLS = True
 
 PLUGIN_PATHS = ['./plugins']
-PLUGINS = ['render_math',]  # 'md_yaml']
-MD_EXTENSIONS = ['codehilite', 'extra', 'smarty', 'toc']
+PLUGINS = ["render_math"]
+
 
 STATIC_PATHS = ['extra', 'images', 'pdfs']
 EXTRA_PATH_METADATA = {
@@ -47,7 +47,7 @@ THEME = 'themes/Flex'  # from pelican-themes; pelican-blue or Flex (nice-blog, t
 
 # Theme specific config below
 SUMMARY_MAX_LENGTH = 0
-SITETITLE = 'Inferentialist Semantics & Math'
+SITETITLE = 'Inferentialist Semantics for Math'
 SITESUBTITLE = 'Collection of thesis-relevant references & snippets'
 #SITEDESCRIPTION = 'A GSoC blog about Bayesian Network Structure Learning with pgmpy'
 #SITELOGO = 'http://pgmpy.readthedocs.org/en/latest/_images/logo.png'

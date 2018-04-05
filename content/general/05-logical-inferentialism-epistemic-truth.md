@@ -1,5 +1,5 @@
 title: Logical Inferentialism - The Bad
-date: 21.03.2018
+date: 21.04.2018
 
 The inferentialist account is bites with several orthodoxies in philosophy:
     - Truth as more basic than Proof
