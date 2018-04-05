@@ -46,25 +46,104 @@
     <p>Posted on Fri 04 May 2018</p>
   </header>
   <div>
-    <p>Model-theoretic semantics (as presented by Tarski) provides a formal account of the meaning of the logical vocabulary ($$\land, \lor, \forall, \ldots$$). In summary:</p>
-<p>Given the usual language of first order logic $$\mathcal L$$, we first define the notion of a <em>model</em> $$\mathfrak M_{\mathcal L}$$. A model fixes the domain of individuals, and assigns an extension to the non-logical vocabulary of the language (=specifies what the variable, predicate and function symbols <em>refer</em> to). In other words, the model fixes the extension of the non-logical part of the language.</p>
+    <p>Model-theoretic semantics (as presented by Tarski) provides a formal account of the meaning of the logical vocabulary (</p>
+<div class="math">$$\land, \lor, \forall, \ldots$$</div>
+<p>). In summary:</p>
+<p>Given the usual language of first order logic </p>
+<div class="math">$$\mathcal L$$</div>
+<p>, we first define the notion of a <em>model</em> </p>
+<div class="math">$$\mathfrak M_{\mathcal L}$$</div>
+<p>. A model fixes the domain of individuals, and assigns an extension to the non-logical vocabulary of the language (=specifies what the variable, predicate and function symbols <em>refer</em> to). In other words, the model fixes the extension of the non-logical part of the language.</p>
 <p>One can then specify the meaning of the logical vocabulary by stating their recursive <em>satisfaction conditions</em> (or <em>truth-in-a-model conditions</em> or simply <em>truth conditions</em>), for example</p>
-<p>If $$\mathfrak M_{\mathcal L}$$ is a model, then </p>
-<p>$$  \mathfrak M_{\mathcal L} \models \varphi \land \psi \colon!\iff \mathfrak M_{\mathcal L}\models \varphi and \mathfrak M_{\mathcal L}\models\psi $$</p>
-<p>the <em>meaning</em> of $$\varphi \land \psi$$, i.e. the truth condition is thus a function that yields a truth value, given a model:</p>
-<p>$$\mathfrak M_{\mathcal L} \mapsto \mathfrak M_{\mathcal L} \models \varphi and \mathfrak M_{\mathcal L}\models\psi$$</p>
+<p>If </p>
+<div class="math">$$\mathfrak M_{\mathcal L}$$</div>
+<p> is a model, then </p>
+<div class="math">$$  \mathfrak M_{\mathcal L} \models \varphi \land \psi \colon\!\iff \mathfrak M_{\mathcal L}\models \varphi and \mathfrak M_{\mathcal L}\models\psi $$</div>
+<p>the <em>meaning</em> of </p>
+<div class="math">$$\varphi \land \psi$$</div>
+<p>, i.e. the truth condition is thus a function that yields a truth value, given a model:</p>
+<div class="math">$$\mathfrak M_{\mathcal L} \mapsto \mathfrak M_{\mathcal L} \models \varphi and \mathfrak M_{\mathcal L}\models\psi$$</div>
 <p>In this sense, Tarski's model theoretic semantics, is a semantic theory only of the logical vocabulary. It is not concerned with the meaning of the non-logical symbols. The connectives of first-order logic are <em>truth-functional</em> or <em>extensional</em>, that is, their truth conditions do not depend on the <em>meaning</em> (for sentences: truth conditions) of the non-logical constituents, but only on their extension (for sentences: truth value). Hence, it is sufficient that a model specifies the extension of the non-logical vocabulary to state the truth-conditions (meaning) of the 1st order connectives.</p>
 <p>When extending the semantic theory to also account for the meaning of modalities such as <em>necessity</em>, one has to move to possible worlds semantics (Kripke models). Here, the semantic value assigned to a proposition by a Kripke model is no longer merely a truth value (extension) but a truth condition, i.e. a <em>subset of worlds where the proposition is true</em> (meaning, intension). This is so because modal vocabulary is <em>intensional</em> that is, it's meaning does not only depend on the extension of its argument (truth value) but on its meaning (truth-condition).</p>
 <p>Further extension of this formal approch to semantics include: indexicals, .., .. and some require further refinement of the <em>semantic value</em> assigned to vocabulary, sentences of the language. It turns out, that only the meaning of the <em>logical connectives</em> of first order logic can be accounted for with a merely extensional model theory that only fixes the reference, but not the meaning of the non-logical. In fact, this is how Tarski defined what logical vocabulary is: that part of language, the meaning of which does not depend on the meaning, but merely the extension of its constituents.</p>
 <p>Where does this leave <em>theories formulated in first order logic</em>?</p>
 <p>Important such theories include (the first order axiomatisation of) Peano Arihmetic, and ZFC set theory. 
-These theories involve certain non-logical symbols, such as $$+,S,\in$$, and come with a set of axioms that inform us about the behavior about those symbols. The axioms, however, fall short of specifying the meaning (truth conditions) of the new connectives. In fact, they even fall short of specifying the extension of the new connectives, and necessarily so. The theories, if, consistent have different models and each model assigns its own extension to e.g. the $$\in$$-predicate.</p>
-<p>Model-theory of ZFC does not provide a semantic theory of set theory, when semantic theory is understood as providing a formal account of meaning. It is not concerned with the truth-conditions of the $$\in$$ predicate. A model of ZFC does not fix the meaning of $$\in$$, merely its extension. And the axiomatic theory does not fix a model, and thus only partially informs us about the extension of $$\in$$.</p>
+These theories involve certain non-logical symbols, such as </p>
+<div class="math">$$+,S,\in$$</div>
+<p>, and come with a set of axioms that inform us about the behavior about those symbols. The axioms, however, fall short of specifying the meaning (truth conditions) of the new connectives. In fact, they even fall short of specifying the extension of the new connectives, and necessarily so. The theories, if, consistent have different models and each model assigns its own extension to e.g. the </p>
+<div class="math">$$\in$$</div>
+<p>-predicate.</p>
+<p>Model-theory of ZFC does not provide a semantic theory of set theory, when semantic theory is understood as providing a formal account of meaning. It is not concerned with the truth-conditions of the </p>
+<div class="math">$$\in$$</div>
+<p> predicate. A model of ZFC does not fix the meaning of </p>
+<div class="math">$$\in$$</div>
+<p>, merely its extension. And the axiomatic theory does not fix a model, and thus only partially informs us about the extension of </p>
+<div class="math">$$\in$$</div>
+<p>.</p>
 <p>In summary, while Tarski's model theoretic definition of truth provides a semantic theory (truth conditions!) for the logical connectives, and, through certain extensions, for modal connectives and indexicals, etc., it does not account for the meaning of non-logical symbols. </p>
 <p>Model theory is not a semantic theory for any axiomatic theory built in the language of first order logic. The meaning of non-logical constituents of such a theory is syntactically described via the axioms. Nowadays, where "to give a semantics" just means to giva a basic model theory, one has to be careful to avoid confusion:</p>
-<p>Model theory of ZFC is not a semantic theory of set theory, because the <em>'semantic' values</em> a model assigns are merely extensions not meanings. It does not attempt to fix truth-conditions of the sentences of set theory and it does not attempt to account for the meaning of $$\in$$. It is a syntactic theory of $$\in$$. Regarding set theory, the usual extension for assigning truth-conditions to atoms/sentences, namely the move to possible worlds semantics is possible without reinterpretation of that semantics, because the truths of set theory are considered <em>necessary</em>, which in that semantics means true at every world and this already fixes the semantic value such that all truths of set theory get assigned the same meaning, same for all falsehoods.</p>
+<p>Model theory of ZFC is not a semantic theory of set theory, because the <em>'semantic' values</em> a model assigns are merely extensions not meanings. It does not attempt to fix truth-conditions of the sentences of set theory and it does not attempt to account for the meaning of </p>
+<div class="math">$$\in$$</div>
+<p>. It is a syntactic theory of </p>
+<div class="math">$$\in$$</div>
+<p>. Regarding set theory, the usual extension for assigning truth-conditions to atoms/sentences, namely the move to possible worlds semantics is possible without reinterpretation of that semantics, because the truths of set theory are considered <em>necessary</em>, which in that semantics means true at every world and this already fixes the semantic value such that all truths of set theory get assigned the same meaning, same for all falsehoods.</p>
 <p>In particular, ZFC and its model theory is not a formal account of the semantics of mathematics. </p>
 <p>When using the notion of a "standard model of set theory", that supposedly fixes the meaning of membership, this is not very satisfactory: Mathematical meaning, with mathematical theorems being necessary, shouldn't vary with models. Next it only fixes extension, and lastly an undefined notion of standard model is murky and subjective. How do i know my standard model is the same as that of others?</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
   </div>
   <div class="tag-cloud">
     <p>
