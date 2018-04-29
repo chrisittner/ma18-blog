@@ -5,7 +5,63 @@
     - The analysis of logical consequence in terms of truth (necessary truth-preservation)
     - Meaning=truth-conditions
     - yields just intuitionistic logic; inferentialist analysis of truth leave truth as an epistemic notion.
-    - Fails to explain the referential/denotational aspect of meaning.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Good</title><link href="https://chrisittner.github.io/ma18-blog/2018/04/21/logical-inferentialism-the-good.html" rel="alternate"></link><published>2018-04-21T00:00:00+02:00</published><updated>2018-04-21T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-04-21:/ma18-blog/2018/04/21/logical-inferentialism-the-good.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Logical Inferentialism = The meaning of logical symbols is fixed by their rules.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Ugly</title><link href="https://chrisittner.github.io/ma18-blog/2018/04/21/logical-inferentialism-the-ugly.html" rel="alternate"></link><published>2018-04-21T00:00:00+02:00</published><updated>2018-04-21T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-04-21:/ma18-blog/2018/04/21/logical-inferentialism-the-ugly.html</id><summary type="html"></summary><content type="html">&lt;p&gt;What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?&lt;/p&gt;
+    - Fails to explain the referential/denotational aspect of meaning.&lt;/p&gt;</content></entry><entry><title>Logical Inferentialism - The Good</title><link href="https://chrisittner.github.io/ma18-blog/2018/04/21/logical-inferentialism-the-good.html" rel="alternate"></link><published>2018-04-21T00:00:00+02:00</published><updated>2018-04-21T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-04-21:/ma18-blog/2018/04/21/logical-inferentialism-the-good.html</id><summary type="html"></summary><content type="html">&lt;p&gt;Logical Inferentialism = The meaning of logical symbols is fixed by their rules.&lt;/p&gt;
+&lt;p&gt;We take &lt;span class="math"&gt;\(\to\)&lt;/span&gt; and &lt;span class="math"&gt;\(\forall\)&lt;/span&gt; to be primitives.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content></entry><entry><title>Logical Inferentialism - The Ugly</title><link href="https://chrisittner.github.io/ma18-blog/2018/04/21/logical-inferentialism-the-ugly.html" rel="alternate"></link><published>2018-04-21T00:00:00+02:00</published><updated>2018-04-21T00:00:00+02:00</updated><author><name>CH</name></author><id>tag:chrisittner.github.io,2018-04-21:/ma18-blog/2018/04/21/logical-inferentialism-the-ugly.html</id><summary type="html"></summary><content type="html">&lt;p&gt;What restrictions need to be imposed on the rules of a connective for it to be 'meaningful' (= a well-formed definition)?&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;- GE-Rules (local)
 - Conservativeness (global)
 - Stability ?
